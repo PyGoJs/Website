@@ -117,12 +117,23 @@ header li ul::-webkit-scrollbar-thumb
 /*
     Rooster
 */
-.day {
-    float: left;
-    padding: 0 50px;
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    background: #ffffff;
 }
 td {
     border: solid 1px;
+    width: 175px;
+    height: 35px;
+    text-align: center;
+    font-size: 0.9em;
+}
+td .date {
+    font-size: 0.8em;
+}
+#classes {
+    position: absolute;
 }
 /*
     Extra stuffs
@@ -131,7 +142,7 @@ td {
     position: fixed;
     right: 0;
     bottom: -95vh;
-    transition: bottom 8s;
+   //transition: bottom 8s;
 }
 #wut img {
     height: 90vh;
@@ -143,7 +154,6 @@ td {
     position: fixed;
     right: 29vh;
     border-radius: 5px;
-    transition: bottom 8s;
 }
 #overlay {
     position: fixed;
