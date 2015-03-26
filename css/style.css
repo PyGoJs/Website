@@ -8,17 +8,24 @@ body {
     Header
 */
 header {
-    height: 150px;
+    height: 110px;
     background: rgb(74, 157, 79);
     border-bottom: solid 2px rgb(48, 102, 48);
     box-shadow: 0px 0px 4px 1px black;
+    position: relative;
+    z-index: 100;
+}
+header #content {
+    width: 1200px;
+    margin: 0 auto;
 }
 div#logo {
-    padding: 20px 30px 40px 30px;
+    padding: 0px 30px 20px 30px;
     width: 225px;
     color: white;
     float: left;
     border-right: solid 2px rgb(48, 102, 48);
+    border-left: solid 2px rgb(48, 102, 48);
     background: rgba(0, 0, 0, 0.08);
 }
 div#logo:hover {
@@ -46,7 +53,7 @@ header ul {
     list-style-type: none;
 }
 header li {
-    height: 150px;
+    height: 110px;
     width: 150px;
     text-align: center;
     float: left;
@@ -65,7 +72,7 @@ header li a:hover {
 }
 header li p {
     margin: 0;
-    margin-top: 55px;
+    margin-top: 40px;
     transition: margin 0.4s, border 0.4s;
     border-bottom: solid 1px transparent;
 }
@@ -95,20 +102,20 @@ header li li {
 header li li a {
     font-weight: normal;
 }
-header li ul::-webkit-scrollbar-track
+::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
     background-color: #F5F5F5;
 }
 
-header li ul::-webkit-scrollbar
+::-webkit-scrollbar
 {
-    width: 5px;
+    width: 6px;
     background-color: transparent;
 }
 
-header li ul::-webkit-scrollbar-thumb
+::-webkit-scrollbar-thumb
 {
     border-radius: 5px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
@@ -119,6 +126,8 @@ header li ul::-webkit-scrollbar-thumb
 */
 #rooster {
     position: relative;
+    margin: 0 auto;
+    width: 1069px;
 }
 table {
     border-spacing: 0;
@@ -136,16 +145,33 @@ td {
 td .date {
     font-size: 0.8em;
 }
-#classes div{
+#classes .classblock{
     position: absolute;
-    margin-top: 45px;
+    margin-top: 44px;
     min-height: 36px;
-    width: 173px;
+    width: 174px;
     background: rgb(255, 255, 255);
     border-left: solid 3px red;
-    border-radius: 4px;
+    //border-radius: 4px;
     text-align: center;
     font-size: 0.8em;
+}
+.aanwezigheid {
+    width: 80%;
+    height: 5px;
+    bottom: 3px;
+    position: absolute;
+    left: 10%;
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 5px;
+    background: rgb(247, 247, 247);
+}
+.progressbar {
+    height: 5px;
+    width: 0;
+    background: green;
+    border-radius: 5px;
+    transition: width 0.5s;
 }
 /*
     Extra stuffs
@@ -154,7 +180,6 @@ td .date {
     position: fixed;
     right: 0;
     bottom: -95vh;
-   //transition: bottom 8s;
 }
 #wut img {
     height: 90vh;
