@@ -87,16 +87,16 @@ header li .selected {
 header li ul {
     opacity: 0;
     pointer-events: none;
-    height: 120px;
+    height: 80px;
     overflow-x: hidden;
 }
 header li li {
-    height: 20px;
-    font-size: 20px;
+    height: 15px;
+    font-size: 18px;
     color: white;
     float: none;
     border-right: none;
-    border-bottom: dotted 1px rgb(48, 102, 48);
+    /*border-bottom: dotted 1px rgb(48, 102, 48);*/
     padding: 0 0 10px 0;
 }
 header li li a {
@@ -113,6 +113,7 @@ header li li a {
 {
     width: 6px;
     background-color: transparent;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-thumb
@@ -141,6 +142,7 @@ td {
     height: 35px;
     text-align: center;
     font-size: 0.9em;
+    border: solid 1px #565656;
 }
 td .date {
     font-size: 0.8em;
@@ -148,26 +150,35 @@ td .date {
 #classes .classblock{
     position: absolute;
     margin-top: 44px;
-    min-height: 36px;
+    min-height: 37px;
     width: 174px;
     background: rgb(255, 255, 255);
     border-left: solid 3px red;
-    //border-radius: 4px;
     text-align: center;
     font-size: 0.8em;
 }
+.classblock i {
+    font-size: 0.85em;
+    position: relative;
+    top: -4px;
+}
 .aanwezigheid {
-    width: 80%;
-    height: 5px;
+    width: 70%;
+    height: 4px;
     bottom: 3px;
     position: absolute;
-    left: 10%;
+    left: 22%;
     border: solid 1px rgb(0, 0, 0);
     border-radius: 5px;
     background: rgb(247, 247, 247);
 }
+.aanwezigheidTab span {
+    position: absolute;
+    bottom: -1px;
+    left: 2%;
+}
 .progressbar {
-    height: 5px;
+    height: 4px;
     width: 0;
     background: green;
     border-radius: 5px;
