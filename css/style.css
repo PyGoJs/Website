@@ -71,6 +71,10 @@ header li a:hover {
     color: rgb(244, 244, 244);
     text-decoration: underline;
 }
+header li i.fa.fa-caret-down {
+    font-size: 0.8em;
+    color: rgb(216, 216, 216);
+}
 header li p {
     margin: 0;
     margin-top: 40px;
@@ -122,6 +126,57 @@ header li li a {
     border-radius: 5px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #515151;
+}
+/*
+    Home
+*/
+#info {
+    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#info .content i:hover {
+    color: rgb(48, 119, 54);
+}
+#info .content i {
+    border: solid 2px;
+    padding: 15px;
+    font-size: 2em;
+    border-radius: 100%;
+    background: rgb(255, 248, 238);
+    transition: color 0.4s;
+    cursor: pointer;
+}
+#info .content {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+.content span#border {
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    width: 690px;
+    height: 0px;
+    position: absolute;
+    top: 53px;
+    margin: 0px 177px;
+    transition: top 0.5s, height 0.5s;
+    background: rgb(199, 219, 255);
+}
+#info #features .content li {
+    padding: 10px;
+}
+#info #features {
+    background: rgb(112, 167, 187);
+    border: solid 2px rgb(68, 104, 118);
+    border-left: none;
+    border-right: none;
+}
+#info ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    text-align: center;
 }
 /*
     Rooster
