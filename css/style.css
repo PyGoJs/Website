@@ -20,7 +20,8 @@ header #content {
     margin: 0 auto;
 }
 div#logo {
-    padding: 0px 30px 20px 30px;
+    padding: 0 30px;
+    height: 110px;
     width: 225px;
     color: white;
     float: left;
@@ -41,7 +42,7 @@ header h1 {
 }
 header h3 {
     margin: -18px 0 0 0;
-    font-size: 1.10em;
+    font-size: 1.05em;
     font-style: italic;
     padding-left: 69px;
     text-shadow: 1px 2px 1px black;
