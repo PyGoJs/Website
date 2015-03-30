@@ -10,14 +10,14 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
 </head>
 <body>
-<!--<div id="overlay">
-    <p class="sale">-75%</p>
-</div>-->
+<div id="overlay">
+
+</div>
 <header>
     <div id="content">
         <div id="logo">
             <h1>PyGoJs</h1>
-            <h3>Het betere werk.</h3>
+            <h3>Het betere werk</h3>
         </div>
         <ul>
             <li>
@@ -69,6 +69,8 @@
         <div id="summary">
             <div class="content">
                 <p><strong>PyGoJs</strong> is een project van 3 leerlingen van het Alfa-College in Nederland. Het PyGoJs project is voor scholen waarbij de leerlingen bij de les kunnen inchecken met een NFC-Chip bij het begin van de les waarvan het dan geregistreerd zal worden op de server zodat leeraren kunnen zien hoeveel mensen aanwezig waren op de bepaalde les.</p>
+                <p>Je kan inchecken in een klas door je pas te houden bij de NFC-Scanner die in de klas is geplaatst. De NFC-Scanner is gemaakt met een Raspberry Pi waarbij de gegevens worden verstuurd naar de server. Daar word bekeken of je telaat bent of als je optijd bent.</p>
+                <p>Possit alterum constituto ut sit, sit te scribentur omittantur, at eos omnium alterum copiosae. Sed antiopam elaboraret id. Ei vocent ocurreret eam. In ius tale dico hendrerit, ne option gubergren his. Ei sea soleat facilisis dignissim, everti instructior no eos. Homero dictas lobortis ex duo, paulo maiorum ut eos, cum cu aliquid necessitatibus.</p>
             </div>
         </div>
         <div id="features">
@@ -80,55 +82,63 @@
                         <p>Zodra iemand inchecked met zijn schoolpas bij de NFC reader zal het rooster automatisch de percentage meters updaten.</p>
                     </li>
                     <li>
-                        <i class="fa fa-users"></i><h2>Leeraren paneel</h2>
+                        <i class="fa fa-users"></i><h2>Leraren paneel</h2>
                         <p>Wij geven de leeraren een gemakkelijke leeraren paneel waarbij zij kunnen zien wie er is ingechecked bij welke les.</p>
                     </li>
                     <li>
-                        <i class="fa fa-link"></i><h2>Meerdere roosters</h2>
+                        <i class="fa fa-link" id="link"></i><h2>Meerdere roosters</h2>
                         <p>Meerdere klassen kunnen nu al hun eigen rooster vinden op de website!</p>
                     </li>
                 </ul>
             </div>
         </div>
-        <div id="placeholder">
+        <div id="faq">
             <div class="content">
-                <p>Possit alterum constituto ut sit, sit te scribentur omittantur, at eos omnium alterum copiosae. Sed antiopam elaboraret id. Ei vocent ocurreret eam. In ius tale dico hendrerit, ne option gubergren his. Ei sea soleat facilisis dignissim, everti instructior no eos. Homero dictas lobortis ex duo, paulo maiorum ut eos, cum cu aliquid necessitatibus.
-                </p>
-                <p>
-                    Enim consequuntur ad duo, impetus evertitur mnesarchum per an, detracto placerat at per. Velit minimum instructior id quo, wisi aperiam delectus id mea. Pri solum feugiat ocurreret in. Ex veri prompta suscipit usu, duis velit ne ius. Ad eos hinc agam eirmod, sint congue est ei, ei velit recteque nam.
-                </p>
-                <p>
-                    Id sint malis nominavi vel, sea ne agam ipsum posidonium. Eos ut intellegat cotidieque, has odio oblique et. Mei solum civibus at, summo inermis no qui, eam ad appareat aliquando. His fierent voluptaria ad. In eam sanctus torquatos consetetur, autem velit nulla pri an. Solet alterum delectus id per.
-                </p>
-                <p>
-                    Iriure voluptaria quo ad, choro quando cetero ut usu. No oblique impedit insolens vis, mea sint scaevola ei, sed id harum offendit. Ornatus mentitum ex cum. Postea ancillae ex mea. Has eruditi scripserit at, ex pro veri scripta verterem. Sit ne docendi torquatos. Quo amet vero natum te, per consul recusabo efficiendi ea.
-                </p>
-                <p>
-                    Ne omnis praesent erroribus eam. Eos elit omnesque id, denique tacimates voluptaria no est. Duo bonorum molestie ex, sit ei exerci semper. Tale suas quo at, at eos quis amet legimus. Eu nec congue accommodare, cetero inciderint ex eam, tantas utinam graecis pri te.
-                </p>
-                <p>
-                    Partem equidem cum in, omnes deserunt percipitur mea eu. Sonet altera aperiri no sit. Ea propriae corrumpit vim, ei pri nibh nonumes dignissim. Eu blandit voluptaria pro. His vocibus assueverit eloquentiam te, vis veniam graece adipisci ei. Eu sit inani prompta.
-                </p>
-                <p>
-                    Denique omnesque platonem nec id. Vel ferri elaboraret ullamcorper ut. Paulo inimicus tractatos ad vis, commodo nostrud offendit id est. His animal adipiscing voluptatibus ei. Id quot invenire eos.
-                </p>
-                <p>
-                    No pro odio imperdiet, te vero percipit maiestatis per. In vix suas gubergren, cum odio minim dissentias no. Consul praesent instructior te mei. Ei homero referrentur mel. Te homero antiopam honestatis eos, mei no gubergren tincidunt. Eum te quidam antiopam splendide, ex nec explicari deterruisset.
-                </p>
-                <p>
-                    Nec cu illud quidam. Ipsum essent utamur cu eam. No cum convenire adipiscing assueverit, ei labitur labores vim, vim no noster aliquip philosophia. Mazim recusabo cu vel, in vix dolorem admodum convenire. Sed modo vivendo facilisis no.
-                </p>
-                <p>
-                    Numquam minimum cum ex, has ea posse evertitur. Te sea nonumy commune referrentur, ea nisl adipiscing nam, aeque discere tincidunt at vix. No timeam nusquam sadipscing vis, sea no fastidii mentitum fabellas. Per dicat delenit accumsan ei, porro cetero constituto an sed.
-                </p>
+                <h1>Frequently Asked Questions</h1>
+                <div class="question">
+                    <div class="ask">
+                        <i class="fa fa-angle-down"></i><a href="#"> Wat voor kaarten worden er gebruikt dat een NFC-Chip heeft?</a>
+                    </div>
+                    <div class="answer">
+                        <p>De school kaarten van het Alfa-College worden hierbij gebruikt. De studenten krijgen deze pasjes aan het begin van het jaar van de leraren.</p>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="ask">
+                        <i class="fa fa-angle-down"></i><a href="#"> Moet bij elke les iedereen aanmelden?</a>
+                    </div>
+                    <div class="answer">
+                        <p>Als je les hebt in dezelfde klas nadat je er nog les had van tevoren, dan hoef jij jezelf niet opnieuw aan te melden. Maar als er een pauze tussen zit, dan moet je wel weer aanmelden met je kaart.</p>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="ask">
+                        <i class="fa fa-angle-down"></i><a href="#"> Waar staat "PyGoJs" voor?</a>
+                    </div>
+                    <div class="answer">
+                        <p>PyGoJs staat voor 3 coderings talen waar dit project is mee gemaakt. <a href="https://www.python.org/">Python</a> voor de client, <a href="https://golang.org/">GoLang</a> voor de server en Javascript voor de website.</p>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="ask">
+                        <i class="fa fa-angle-down"></i><a href="#"> Worden er later ook meer klassen toegevoegd aan het systeem?</a>
+                    </div>
+                    <div class="answer">
+                        <p>Sinds het nu nog maar een klein project is worden er niet meer klassen toegevoegd.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!--<div id="wut">
+
+<footer>
+
+</footer>
+<div id="wut">
     <img src="img/gabe.png">
-    <a href="#" onclick="spawnSale()"><<div id="wut2"></div></a>
-</div>-->
+    <a href="#" onclick="spawnSale()"><div id="wut2"></div></a>
+</div>
 <script src="lib/js/myScript.js"></script>
 </body>
 </html>
