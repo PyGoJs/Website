@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script src="../lib/js/cookies.js"></script>
 </head>
 <body>
 <div id="overlay">
@@ -23,8 +24,8 @@
             <li>
                 <p><a href="../">Home</a></p>
             </li>
-            <li value="1">
-                <p><a href="#">Rooster <i class="fa fa-caret-down"></i></a></p>
+            <li>
+                <p value="1"><a href="#">Rooster</a> <i class="fa fa-caret-down"></i></p>
                 <ul>
                     <li>
                         <a href="#1a" onclick="roosterLink(1)">B-ITB4-1a</a>
@@ -38,11 +39,11 @@
                 </ul>
             </li>
             <li>
-                <p><a href="#">About</a></p>
+                <p value="0"><a href="#">About</a></p>
             </li>
-            <li value="1">
-                <p><a href="#">Login</a></p>
-                <ul><form>
+            <li id="account">
+                <p value="1"><a href="#"></a> <i class="fa fa-caret-down"></i></p>
+                <ul><form action="/" id="login">
                     <li>
                         <input name="username" type="text" placeholder="Username">
                     </li>
@@ -50,7 +51,7 @@
                         <input name="password" type="password" placeholder="Password">
                     </li>
                     <li>
-                        <input name="login" type="button" value="Login">
+                        <input name="login" type="submit" value="Login">
                     </li></form>
                 </ul>
             </li>
@@ -224,10 +225,35 @@
         <div id="classes"></div>
     </div>
 </div>
-<div id="wut">
-    <img src="../img/gabe.png">
-    <a href="#" onclick="spawnSale()"><div id="wut2"></div></a>
-</div>
+<footer>
+    <div id="footerInfo">
+        <div id="credits">
+            <h2>Credits</h2>
+            <ul>
+                <li>Website programmeur: Arnold Buining</li>
+                <li>Server programmeur: Remi Reuvelkamp</li>
+                <li>Client programmeur: Tomas Imbos</li>
+            </ul>
+        </div>
+        <div id="social">
+            <h2>Social</h2>
+        </div>
+        <div id="sitemap">
+            <h2>Site Map</h2>
+            <ul>
+                <li>
+                    <a href="../">Home page</a>
+                </li>
+                <li>
+                    <a href="#">Roosters</a>
+                </li>
+                <li>
+                    <a href="#">About us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
 <script src="../lib/js/myScript.js"></script>
 <script src="../lib/js/rooster.js"></script>
 </body>

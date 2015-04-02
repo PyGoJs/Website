@@ -1,0 +1,111 @@
+
+@media screen and (max-width: 700px){
+    body {
+
+    }
+    header #logo {
+
+    }
+    header ul {
+
+    }
+    header li {
+
+    }
+}
+
+@media screen and (max-device-width: 580px) {
+    body {
+        width: 100%;
+    }
+    #overlay{
+        display: none;
+    }
+    header {
+        width: 100%;
+        height: 150px;
+    }
+    header #content {
+        width: 100%;
+    }
+    header #logo {
+        width: initial;
+        height: 150px;
+        float: left;
+    }
+    header h1 {
+        margin: 1px;
+        font-size: 6em;
+    }
+    header h3 {
+        margin: -26px 0 0 0;
+        font-size: 1.40em;
+        padding-left: 100px;
+    }
+    header ul#pcNav{
+        display: none;
+    }
+    header ul#moNav{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: block;
+        width: 100%;
+    }
+    header ul li{
+        font-size: 5em;
+        padding: 20px;
+        width: 140px;
+        height: 112px;
+        border-right: dotted 3px rgb(48, 102, 48);
+    }
+    /*  Info Page    */
+    #container{
+
+    }
+    #summary{
+        font-size: 1.75em;
+    }
+    #features{
+        font-size: 2em;
+    }
+    #info ul {
+        flex-wrap: wrap;
+    }
+    #info #features .content li {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #info .content {
+        width: 95%;
+    }
+    .content span#border{
+        display: none;
+    }
+
+    /*  FAQ         */
+    #faq h1 {
+        font-size: 3em;
+    }
+    #faq .question {
+        font-size: 2em;
+    }
+    #faq .ask {
+        padding: 30px;
+    }
+    #faq .answer {
+        border-bottom: solid 2px grey;
+    }
+
+    /*  Rooster     */
+    #rooster{
+        width: 100%;
+    }
+    td {
+        min-width: 160px;
+        max-width: 160px;
+    }
+    #classes .classblock {
+        margin-top: 40px;
+    }
+}
