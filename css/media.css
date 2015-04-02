@@ -69,6 +69,9 @@
     #features{
         font-size: 2em;
     }
+    #info .card {
+        font-size: 1em;
+    }
     #info ul {
         flex-wrap: wrap;
     }
@@ -78,6 +81,7 @@
     }
     #info .content {
         width: 95%;
+        padding-bottom: 120px;
     }
     .content span#border{
         display: none;
@@ -107,5 +111,17 @@
     }
     #classes .classblock {
         margin-top: 40px;
+    }
+    /*  Footer      */
+    footer #footerInfo {
+        width: 100%;
+    }
+    footer #footerInfo div {
+        padding: 10px;
+        width: 31%;
+        float: left;
+    }
+    footer #social {
+        border: none;
     }
 }
