@@ -117,7 +117,7 @@ header li li a {
 ::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
+    //border-radius: 10px;
     background-color: #F5F5F5;
 }
 
@@ -130,7 +130,7 @@ header li li a {
 
 ::-webkit-scrollbar-thumb
 {
-    border-radius: 5px;
+    //border-radius: 5px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #515151;
 }
@@ -271,7 +271,7 @@ table {
     border-collapse: collapse;
     background: #F2F2F2;
 }
-td {
+#rooster td {
     border: solid 1px;
     min-width: 175px;
     max-width: 175px;
@@ -280,7 +280,7 @@ td {
     font-size: 0.9em;
     border: solid 1px #565656;
 }
-td .date {
+#rooster td .date {
     font-size: 0.8em;
 }
 #classes .classblock{
@@ -293,6 +293,11 @@ td .date {
     text-align: center;
     font-size: 0.8em;
     margin-left: 1px;
+    cursor: pointer;
+    transition: border 0.5s;
+}
+#classes .classblock:hover{
+    border-color: darkred;
 }
 .classblock i {
     font-size: 0.85em;
@@ -313,6 +318,53 @@ td .date {
     position: absolute;
     bottom: -1px;
     left: 2%;
+}
+.aanwezigen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 31px 0 0 0;
+    height: 269px;
+    overflow: auto;
+    border-left: solid 1px grey;
+    background: rgba(0, 0, 0, 0.07);
+    width: 280px;
+}
+.aanwezigen thead {
+    border-bottom: solid 2px rgb(174, 174, 174);
+    text-align: center;
+}
+.aanwezigen td {
+    border: solid 1px rgb(189, 189, 189);
+    background: white;
+    width: 80px;
+}
+.aanwezigen #loginStuffs {
+    margin-top: 25px;
+}
+.aanwezigen #loginStuffs li {
+    list-style-type: none;
+}
+.aanwezigen #loginStuffs p {
+    width: 213px;
+    margin: 0 0 0 56px;
+    padding: 5px;
+    background: rgb(112, 171, 115);
+    color: white;
+    text-shadow: 1px 1px 0px black;
+    border: solid 1px rgb(33, 92, 33);
+    border-left: none;
+}
+.aanwezigen #loginStuffs i {
+    border: solid 1px rgb(33, 92, 33);
+    padding: 10px;
+    font-size: 2em;
+    background: rgb(74, 157, 79);
+    color: white;
+    text-shadow: 1px 1px 0px black;
+    min-width: 34px;
+    text-align: center;
+    float: left;
 }
 .progressbar {
     height: 4px;
@@ -336,14 +388,15 @@ td .date {
     margin: 0 auto;
     margin-top: 150px;
     background: whitesmoke;
-    border: solid 2px rgb(86, 86, 86);;
+    border: solid 2px rgb(46, 56, 39);
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.79);
     background-repeat: no-repeat;
     background-position: right bottom;
+    position: relative;
 }
 #container #block #topbar {
     height: 30px;
-    border-bottom: solid 1px grey;
+    border-bottom: solid 1px rgb(39, 56, 28);
     background: rgb(77, 142, 80);
     font-size: 1.2em;
     padding: 0 0 0 10px;
@@ -354,9 +407,10 @@ td .date {
 }
 #container #block #topbar i {
     float: right;
-    padding: 3px 5px;
-    border-left: solid 1px grey;
-    font-size: 1.3em;
+    padding: 1px 5px 2px;
+    border-left: solid 1px rgb(39, 56, 28);
+    border-bottom: solid 1px rgb(39, 56, 28);
+    font-size: 1.4em;
     background: rgb(76, 124, 76);
 }
 #container #block #topbar i:hover {
