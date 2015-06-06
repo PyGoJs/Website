@@ -2,6 +2,8 @@
 // Make a new instance of Auth.
 $auth = new Auth();
 
+$auth->checkSession();
+
 // Make it possible to use sessions.
 session_start();
 
@@ -12,16 +14,16 @@ function msgs(){
 		foreach($msgs as $msg) {
 			switch($msg) {
 			case "login":
-				echo "Login succesfull";
+				echo "Login gelukt";
 				break;
 			case "logout":
-				echo "Logout succesfull";
+				echo "Loguit gelukt";
 				break;
 			case "changedpass":
-				echo "Password changed succesfully";
+				echo "Wachtwoord aangepast";
 				break;
 			case "nopermission":
-				echo "You currently have not got permission to the requested";
+				echo "Je beschikt niet over de benodigde rechten om het aangevraagde te doen";
 				break;
 			}
 		}
@@ -38,3 +40,5 @@ function addMsg($msg) {
 
 	$_SESSION["messages"] += ":" + $msg;
 }
+
+$now = new DateTime();

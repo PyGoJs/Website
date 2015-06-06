@@ -4,25 +4,30 @@ class Clas {
 	private $id = 0;
 	private $name = "";
 
-	public function fetch($id) {
+	public static function fetch($sqlEnd, $args) {
 		global $db;
 
-		$stmt = $db->prepare("SELECT id, name FROM class WHERE id = ? LIMIT 1;");
-		$stmt->execute(array($id));
+		$stmt = $db->prepare("SELECT id, name FROM class " . $sqlEnd . ";");
+		$stmt->execute($args);
 
-		$row = $stmt->fetch();
+		$rows = $stmt->fetchAll();
 
-		if(!isset($row["name"])) {
-			return false;
+		$classes = array();
+		foreach($rows as $row) {
+			$class = new Clas();
+			$class->id = $row["id"];
+			$class->name = $row["name"];
+			$classes[] = $class;
 		}
 
-		$this->id = $row["id"];
-		$this->name = $row["name"];
-
-		return true;
+		return $classes;
 	}
 
 	public function getName() {
 		return $this->name;
+	}
+
+	public function getId() {
+		return $this->id;
 	}
 }

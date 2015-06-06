@@ -1,29 +1,29 @@
 <?php
-require_once("premain.php");
-require_once("../lib/classes/Auth.class.php");
-require_once("main.php");
+// Login page shows the login form and handled the POST request the form creates to handle the login itself.
 
-$auth->checkSession();
+require_once("../../lib/premain.php");
+require_once("../../lib/classes/Auth.class.php");
+require_once("../../lib/main.php");
 
 // Check if should log out.
 if(isset($_GET["logout"])) {
 	// Checked if already logged out ( = not logged in)
 	if(!$auth->checkSession()) {
-		header("Location: auth.php?not-logged-in");
+		header("Location: ..?not-logged-in");
 		exit;
 	}
 
 	$auth->logout();
 
 	addMsg("logout");
-	header("Location: auth.php");
+	header("Location: ..");
 
 	exit;
 }
 
 // Check if already logged in.
 if($auth->checkSession()) {
-	header("Location: auth.php?already-logged-in");
+	header("Location: ..?already-logged-in");
 	exit;
 }
 
@@ -36,7 +36,7 @@ if(isset($_POST["login"], $_POST["pass"])) {
 	$success = $auth->login($login, $pass);
 	if($success) {
 		addMsg("login");
-		header("Location: auth.php");
+		header("Location: ..");
 		exit;
 	}
 
@@ -44,7 +44,7 @@ if(isset($_POST["login"], $_POST["pass"])) {
 }
 ?>
 	<form method="post" action="">
-		<input type="text" name="login" />
+		<input type="text" name="login" /><br />
 		<input type="password" name="pass" />
 		<input type="submit" />
 	</form>

@@ -12,6 +12,7 @@ class Auth {
 	private $type = 0;
 	private $login = "";
 	private $sid = 0;
+	private $tid = 0;
 
 	// loggedin returns a boolean which is true if a user is loggedin.
 	// checkSession should be called before this function can return true.
@@ -112,7 +113,7 @@ class Auth {
 		$id = $_SESSION["login_id"];
 
 		// Get the user data from the database.
-		$stmt = $db->prepare("SELECT sid, type, login FROM account WHERE id=:id LIMIT 1;");
+		$stmt = $db->prepare("SELECT sid, tid, type, login FROM account WHERE id=:id LIMIT 1;");
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
 		$row = $stmt->fetch();
@@ -128,6 +129,7 @@ class Auth {
 		$this->type = $row["type"];
 		$this->login = $row["login"];
 		$this->sid = $row["sid"];
+		$this->tid = $row["tid"];
 
 		$this->loggedIn = true;
 
@@ -190,6 +192,10 @@ class Auth {
 
 	public function getSid() {
 		return $this->sid;
+	}
+
+	public function getTid() {
+		return $this->tid;
 	}
 
 	public function getLogin() {

@@ -3,6 +3,7 @@
 class Teacher {
 	private $id = "";
 	private $name = "";
+	private $schedName = ""; // The (abbreviated) name used in schedules (schedule_item) as staffs.
 
 	public static function fetchByCid($cid) {
 		global $db;
@@ -23,7 +24,31 @@ class Teacher {
 		return $mentors;
 	}
 
+	public static function fetch($sqlEnd, $args) {
+		global $db;
+
+		$stmt = $db->prepare("SELECT id, name, schedname FROM teacher " . $sqlEnd . ";");
+		$stmt->execute($args);
+
+		$rows = $stmt->fetchAll();
+
+		$teachers = array();
+		foreach($rows as $row) {
+			$teacher = new Teacher();
+			$teacher->id = $row["id"];
+			$teacher->name = $row["name"];
+			$teacher->schedName = $row["schedname"];
+			$teachers[] = $teacher;
+		}
+
+		return $teachers;
+	}
+
 	public function getName() {
 		return $this->name;
+	}
+
+	public function getSchedName() {
+		return $this->schedName;
 	}
 }
