@@ -5,6 +5,13 @@ class Student {
 	private $name = "";
 	private $cid = 0;
 
+	public function __construct($row) {
+		if(is_array($row)) {
+			$this->id = $row["sid"];
+			$this->name = $row["name"];
+		}
+	}
+
 	public function fetch($id) {
 		global $db;
 

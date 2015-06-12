@@ -11,15 +11,20 @@ class Lesson {
 
 	// private $schedItem;
 	
-	public function fetch($sqlEnd, $args) {
+	public static function fetch($sqlEnd, $args) {
 		global $db;
 
-		$stmt = $db->prepare("SELECT s.id, s.day, s.start, s.end, s.description, s.facility, s.staff, 
-			l.id AS lid, l.cid, l.max_students FROM schedule_item AS s, lesson AS l " . $sqlEnd . ";");
-		// WHERE l.cid = ? AND l.yearweek = ? AND l.siid = s.id
-		$stmt->execute($args);
+		try {
+			$stmt = $db->prepare("SELECT s.id, s.day, s.start, s.end, s.description, s.facility, s.staff, 
+				l.id AS lid, l.cid, l.max_students FROM schedule_item AS s, lesson AS l " . $sqlEnd . ";");
+			// WHERE l.cid = ? AND l.yearweek = ? AND l.siid = s.id
+			$stmt->execute($args);
 
-		$rows = $stmt->fetchAll();
+			$rows = $stmt->fetchAll();
+		} catch(Exception $e) {
+			echo $e->getMessage();
+			return;
+		}
 	
 		$lessons = array();
 		foreach($rows as $row) {

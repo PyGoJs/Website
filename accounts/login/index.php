@@ -50,6 +50,6 @@ if(isset($_POST["login"], $_POST["pass"])) {
 	</form>
 <?php
 	if($incorrect) {
-		echo "Incorrect login or password";
+		echo "Login wachtwoord combinatie niet gevonden";
 	}
 ?>

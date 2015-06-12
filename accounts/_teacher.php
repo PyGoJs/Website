@@ -24,7 +24,6 @@ Je bent een docent
 </p>
 <p>
 <?php
-
 $days = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
 $lessons = Lesson::fetch("WHERE s.staff = ? AND l.yearweek = ? AND l.siid = s.id", array($teacher->getSchedName(), $yrWk));
 if(count($lessons) > 0) {

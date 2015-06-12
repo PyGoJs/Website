@@ -51,14 +51,15 @@ case Auth::TYPE_TEACHER:
 	break;
 case Auth::TYPE_ADMIN:
 	echo "You are an admin<br />Your code is not done yet";
-	echo "<a href='changepass.php?other'>Change someone elses password</a>";
+	echo "<p>Administratieve middelen:<br />";
+	echo "<a href='changepass?other'>Wachtwoord account aanpassen</a></p>";
 	break;
 }
 ?>
 
 <br />
 <a href="login?logout">Log uit</a> -
-<a href="changepass.php">Wachtwoord aanpassen</a><br />
+<a href="changepass">Wachtwoord aanpassen</a><br />
 
 <?php
 

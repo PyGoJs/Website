@@ -1,12 +1,12 @@
 <?php
-require_once("premain.php"); // For database
-require_once("../lib/classes/Auth.class.php"); // For auth class
-require_once("main.php"); // For other stuff
+require_once("../../lib/premain.php"); // For database
+require_once("../../lib/classes/Auth.class.php"); // For auth class
+require_once("../../lib/main.php"); // For other stuff
 
 // Redirect if not logged in
 if(!$auth->checkSession()) {
 	addMsg("nopermission");
-	header("Location: auth.php");
+	header("Location: ../login");
 	exit;
 }
 
@@ -18,7 +18,7 @@ if(isset($_GET["other"])) {
 // Redirect if no permission
 if($other && $auth->getType() != Auth::TYPE_ADMIN) {
 	addMsg("nopermission");
-	header("Location: auth.php");
+	header("Location: ../login");
 }
 
 function changePass() {
@@ -31,17 +31,17 @@ function changePass() {
 
 	// Stop if not all vars are filled in.
 	if($type == "" || $newPass1 == "" || $newPass2 == "" || $current == "") {
-		return "Not everything filled in :( ";
+		return "Niet alle velden zijn ingevult";
 	}
 
 	// Stop if the two new passwords don't match.
 	if($newPass1 != $newPass2) {
-		return "Two new passwords don't match";
+		return "De twee nieuwe wachtwoorden komen niet overeen";
 	}
 
 	// Stop if current own password is incorrect.
 	if(!$auth->checkPassword($current)) {
-		return "Incorrect current password";
+		return "Incorrect huidige wachtwoord";
 	}
 
 	// Not other; Change my own password
@@ -50,7 +50,7 @@ function changePass() {
 	} else { // Change other password
 		echo "other";
 		if(!isset($_POST["othername"]) || $_POST["othername"] == "") {
-			return "No other account name";
+			return "Accountnaam niet ingevult";
 		}
 
 		$other = new Auth();
@@ -62,7 +62,7 @@ function changePass() {
 	}
 
 	addMsg("changedpass");
-	header("Location: auth.php");
+	header("Location: ../");
 	return;
 }
 
