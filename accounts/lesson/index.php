@@ -64,3 +64,4 @@ if(count($atts) > 0) {
 }
 
 ?>
+<a href="../">Terug</a>

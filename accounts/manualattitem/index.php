@@ -10,6 +10,36 @@ if(!$auth->checkSession()) {
 	exit;
 }
 
+// Form posted
+function post($aid, $minute) {
+	$aid = intval($aid);
+	if($aid < 0) {
+		
+	}
+	$minute = intval($minute);
+	if($minute <= 0) {
+		return;
+	}
+
+	$atts = Attendee::fetch("WHERE attendee.id = ? AND attendee.sid = student.id", array($aid));
+
+	if(count($atts) == 0) {
+		echo "Att not found";
+		exit;
+	}
+
+	$att = $atts[0];
+
+	$att->createItem($minute);
+
+	header("Location: ?id=" . $att->getId());
+	exit;
+}
+
+if(isset($_POST["submit"], $_POST["aid"], $_POST["minute"])) {
+	post($_POST["aid"], $_POST["minute"]);
+}
+
 if(!isset($_GET["id"])) {
 	header("Location: ../");
 	exit;
@@ -21,6 +51,8 @@ if(!is_numeric($aid)) {
 	header("Location: ../?numeric");
 	exit;
 }
+
+// TO DO: Check if logged in user has got permission to view this.
 
 $atts = Attendee::fetch("WHERE attendee.id = ? AND attendee.sid = student.id", array($aid));
 
@@ -50,10 +82,12 @@ if($min > 0) {
 }
 
 echo "<p>Check-" . (($att->getAttent()) ? " in" : "out") . " toevoegen na " . $min . " minuten na start les";
+
 ?>
 <p>
 <form method="post" action="">
 	<input type="hidden" name="aid" value="<?php echo $aid; ?>" />
 	<input type="number" name="minute" value="<?php echo $min; ?>" />
-	<input type="submit" />
+	<input type="submit" name="submit" />
 </form>
+<a href="../lesson?id=<?php echo $att->getLid(); ?>">Terug</a>
